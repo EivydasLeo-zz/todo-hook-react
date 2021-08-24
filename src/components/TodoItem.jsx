@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const TodoItem = (props) => {
-  return <li>TodoItem</li>;
+export const TodoItem = ({ item }) => {
+  return <li>{item.title}</li>;
 };
