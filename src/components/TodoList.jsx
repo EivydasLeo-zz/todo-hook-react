@@ -1,11 +1,11 @@
 import React from 'react';
 import { TodoItem } from './TodoItem';
 
-export const TodoList = ({ todos }) => {
+export const TodoList = ({ allTodos, onDoneUndone }) => {
   return (
     <ul>
-      {todos.map((t) => (
-        <TodoItem item={t} key={t.id} />
+      {allTodos.map((t) => (
+        <TodoItem item={t} key={t.id} onDoneUndone={onDoneUndone} />
       ))}
     </ul>
   );

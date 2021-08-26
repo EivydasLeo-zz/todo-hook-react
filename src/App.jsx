@@ -2,20 +2,25 @@ import React, { useState, useEffect } from 'react';
 
 import './App.css';
 import { TodoList } from './components/TodoList';
-import allTodos from './db/todos';
+import todosDummyData from './db/todos';
 
 function App() {
-  // console.log(allTodos());
+  // console.log(todosDummyData());
   const [todos, setTodos] = useState([]);
+  console.log(useState([]));
+
+  const setDoneUndone = (id) => {
+    console.log('setDoneUndone', id);
+  };
 
   useEffect(() => {
-    setTodos(allTodos());
+    setTodos(todosDummyData());
   }, []);
 
   return (
     <div className="App">
       <h2>Todo List</h2>
-      <TodoList todos={todos} />
+      <TodoList allTodos={todos} onDoneUndone={setDoneUndone} />
     </div>
   );
 }
